@@ -1,24 +1,40 @@
 # hermit
 
-Docker Sandboxes custom templates let you create reusable sandbox environments with pre-installed tools and configuration. Instead of asking the agent to install packages each time, hermit is built with everything ready for OpenClaw on Ollama.
+`hermit` is a custom Docker Sandbox template for running OpenClaw via Ollama in an isolated micro VM with its own Docker daemon.
 
-hermit is a shell-first template based on `docker/sandbox-templates:shell` with Node.js 22, Ollama, OpenClaw, and `zstd` preinstalled. On first interactive run, it starts `ollama serve`, bootstraps OpenClaw config for sandbox constraints, and launches OpenClaw.
+> [why docker sandboxes](https://docs.docker.com/ai/sandboxes/#why-use-docker-sandboxes)? 
 
 ## Quick Start
+
+### Build Image Locally
+
+Build the `hermit` template image from this repository.
 
 ```bash
 docker build -t hermit .
 ```
 
+### Create The Sandbox
+
+Create and start a sandbox named `seashell` using the `hermit` template.
+
 ```bash
 docker sandbox run --name seashell -t hermit shell .
 ```
+
+### Reconnect To Sandbox
+
+Start another session in the existing `seashell` sandbox.
 
 ```bash
 docker sandbox run seashell
 ```
 
 ## Build Without Cloning
+
+### Build Directly From GitHub
+
+Build the image from the repository URL without cloning locally.
 
 ```bash
 docker build -t hermit https://github.com/alDuncanson/hermit.git
