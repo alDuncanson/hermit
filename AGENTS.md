@@ -13,5 +13,5 @@ Instructions in this file apply to the entire repository.
 
 - Keep this repository minimal and shell-first.
 - Prefer concise docs with one command per fenced block.
-- Use `sand-crab` as the default local image tag in examples.
+- Use `hermit` as the default local image tag in examples.
 - Keep Docker instructions compatible with plain Docker CLI usage.

@@ -1,27 +1,27 @@
-# sand-crab
+# hermit
 
 Minimal shell-based Docker sandbox for running OpenClaw with Ollama.
 
 ## Build Image
 
 ```bash
-docker build -t sand-crab .
+docker build -t hermit .
 ```
 
 ## Build From GitHub (No Clone)
 
 ```bash
-docker build -t sand-crab https://github.com/alDuncanson/sand-crab.git
+docker build -t hermit https://github.com/alDuncanson/hermit.git
 ```
 
 ```bash
-docker run -it --rm sand-crab
+docker run -it --rm hermit
 ```
 
 ## Create Sandbox
 
 ```bash
-docker sandbox run --name shell-sandboxing -t sand-crab shell .
+docker sandbox run --name shell-sandboxing -t hermit shell .
 ```
 
 ## Recreate Sandbox
@@ -31,7 +31,7 @@ docker sandbox rm shell-sandboxing
 ```
 
 ```bash
-docker sandbox run --name shell-sandboxing -t sand-crab shell .
+docker sandbox run --name shell-sandboxing -t hermit shell .
 ```
 
 ## Start Sandbox Session
@@ -57,11 +57,11 @@ OPENCLAW_AUTOSTART=0 docker sandbox run shell-sandboxing
 ## Run As A Normal Docker Container
 
 ```bash
-docker run -it --rm sand-crab
+docker run -it --rm hermit
 ```
 
 ```bash
-docker run -it --rm -e OPENCLAW_AUTOSTART=0 sand-crab
+docker run -it --rm -e OPENCLAW_AUTOSTART=0 hermit
 ```
 
 ## Troubleshooting
