@@ -6,6 +6,7 @@ on:
       - Dockerfile
       - .github/workflows/docker-ci.yml
       - .github/workflows/publish-ghcr.yml
+      - .github/workflows/release-on-tag.yml
   push:
     branches:
       - main
@@ -13,6 +14,7 @@ on:
       - Dockerfile
       - .github/workflows/docker-ci.yml
       - .github/workflows/publish-ghcr.yml
+      - .github/workflows/release-on-tag.yml
 
 permissions:
   contents: read

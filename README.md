@@ -39,3 +39,17 @@ Build the image from the repository URL without cloning locally.
 ```bash
 docker build -t hermit https://github.com/alDuncanson/hermit.git
 ```
+
+## Release And Publish
+
+Set these repository secrets before publishing to Docker Hub: `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`.
+
+Push a version tag to create a GitHub Release and publish images to GHCR and Docker Hub.
+
+```bash
+git tag v0.1.0
+```
+
+```bash
+git push origin v0.1.0
+```
